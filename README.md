@@ -11,21 +11,19 @@
 Our initial analysis showed that the data could be used to track the expansion over time. Our Research Question: How does the expansion of Urban Rail Infrastucture system infrastructure correspond with changes in U.S. metropolitan areas over time?
 
 
-Starting Point: 
+# Starting Point: 
 
-First, data cleaning, then merging multiple dataset into one: 
+Initial data cleaning:
+line_drops ->  drop columns 'url_name', 'color', 'transport_mode_id'
+cities_usa -> drop column 'url_name' and filter to extract only ['country'] == "United States"] 
 
-* line_drops - drop columns 'url_name', 'color', 'transport_mode_id'
-* cities_usa - drop column 'url_name' and filter to extract only ['country'] == "United States"] 
-
-
-* Merge line_drop & cities_usa into cities_lines by joining columns, ['city_id'] [right_on='id'] 
+Merge line_drop & cities_usa into cities_lines by joining columns, ['city_id'] [right_on='id'] 
 * Rename columns ('name':'city) and (city_id': 'id')
-* Drop Non-value in the subset='city'
+* Drop Non-values in the subset='city'
 
 
-*Merge stations and cities_usa = cities_stations with the columns (left_on='city_id', right_on='id')
-* Renaming cities_stations columns (name_y':'city') , (city_id':'id'})
+Merge stations and cities_usa into cities_stations with the columns (left_on='city_id', right_on='id')
+* Renaming columns (name_y':'city') and (city_id':'id')
 * dropna(subset='city')
 * cities_stations: filtering the cities_stations[cities_stations['buildstart']> 0]
 
@@ -46,14 +44,14 @@ First, data cleaning, then merging multiple dataset into one:
 
 - Showcasing overall US stations built overtime
 
-# Data Visualization 4 - Stacked Histogram "Staionts Built in the US cities"
+# Data Visualization 4 - Stacked Histogram "Stations Built in the US cities"
 ![Stacked Stations](Images/stacked_hist.png)
 
 - Showcasing comparsion between the different cities building stations in US overtime
 
 # Conclusion/Findings -  
-Stations being built skyrocked between 1850 - 1930. 
-Became less in demands until 1975
+* Urban rail stations grew rapidly between 1850 and 1930
+* After 1930, the demands for stations declined significantly
 
 
-Future Analysis: Incorporate US Census data to see if there's a correlation between US population and urban rail system.
+Future Implemention/Analysis: Incorporate US Census data to see if there's a correlation between US population and urban rail system.
