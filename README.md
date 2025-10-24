@@ -51,4 +51,9 @@ First, data cleaning, then merging multiple dataset into one:
 
 - Showcasing comparsion between the different cities building stations in US overtime
 
+# Conclusion/Findings -  
+Stations being built skyrocked between 1850 - 1930. 
+Became less in demands until 1975
+
+
 Future Analysis: Incorporate US Census data to see if there's a correlation between US population and urban rail system.
